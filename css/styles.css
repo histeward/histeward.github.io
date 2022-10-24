@@ -102,7 +102,7 @@ button:hover {
 /* start index */
 .s-1 {
   min-height: 100vh;
-  background:url('../img/banner.PNG');
+  background:url('../img/banner.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
