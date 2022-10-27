@@ -1,3 +1,8 @@
+/*COLOURS
+nice black color #151515
+Shades of gray #222125 #0c0b13 #0b0f13 #0d1116 #0d1316 #1b2026
+
+*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
@@ -50,16 +55,22 @@ header {
 }
 
 .logo a {
-  font-weight: bold;
+  font-weight: 600;
   margin: auto;
+  opacity: 90%;
   background-color: transparent;
   background: -webkit-linear-gradient(#13547a, #80d0c7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+nav {
+  background-color: transparent;
+}
+
 .nav-links {
-  list-style: none;  
+  list-style: none;
+  background-color: transparent;
 }
 
 .nav-links li {
@@ -67,7 +78,7 @@ header {
   padding: 0 20px;
 }
 
-.nav-links li a {
+.nav-links li{
   background: -webkit-linear-gradient(#13547a, #80d0c7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -75,8 +86,10 @@ header {
   cursor: pointer;
 }
 
-.nav-links li a:hover {
-  color: #80d0c7;
+.nav-links :last-child:hover {
+  background: -webkit-linear-gradient(black, #80d0c7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
 }
 
 button {
@@ -105,22 +118,33 @@ button:hover {
   background:url('../img/banner.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 75%;
   position: relative;
 }
 .banner-text {
   position: absolute;
   top: 30%;
-  left: 20%;
+  left: 10%;
   margin: auto;
-  opacity: 70%;
+  background-color: transparent;
 }
 
-.banner-text, h2 {
-  color: gray;
-  font-size: 90px;
+.banner-text h2 {
+  font-size: 30px;
+  font-size: 7vw;
   background-color: transparent;
+  opacity: 65%;
   background: -webkit-linear-gradient(#13547a, #80d0c7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+p {
+  color: #151515;
+  opacity: 40%;
+  background-color: transparent;
+  max-width: 550px;
+  height: auto;font-size: 30px;
+  font-size: 3.5vw;
 }
 /* end index */
