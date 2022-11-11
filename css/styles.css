@@ -10,7 +10,7 @@ Shades of gray #222125 #0c0b13 #0b0f13 #0d1116 #0d1316 #1b2026
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
-  background-color: rgb(250,250,250)
+  background-color: rgb(250, 250, 250)
 }
 
 html {
@@ -26,16 +26,22 @@ body {
 }
 
 @keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-     }
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  background-color: transparent;
 }
 
 /* start navigation bar*/
-li, a {
+li,
+a {
   font-size: 16px;
   font-weight: regular;
   text-decoration: none;
@@ -76,29 +82,30 @@ nav {
 .nav-links li {
   display: inline-block;
   padding: 0 20px;
+  color:#13547a;
 }
 
-.nav-links li{
-  background: -webkit-linear-gradient(#13547a, #80d0c7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.3s ease 0s ;
+.nav-links li {
+  transition: all 0.3s ease 0s;
   cursor: pointer;
+  color:#13547a;
 }
 
-.nav-links :last-child:hover {
-  background: -webkit-linear-gradient(black, #80d0c7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
+.nav-links li:hover {
+  color: white;
+}
+
+.nav-links li:active {
+  color: white;
 }
 
 button {
   margin-left: 20px;
   padding: 9px 25px;
   font-size: 16px;
-/* background-image: linear-gradient(135deg, #acb6e5 30%, #86fde8 100%); */
-/* background-image: linear-gradient(135deg, #92FFC0 10%, #002661 100%); */
-/* background-image: linear-gradient(135deg, #81FFEF 10%, #F067B4 100%); */
+  /* background-image: linear-gradient(135deg, #acb6e5 30%, #86fde8 100%); */
+  /* background-image: linear-gradient(135deg, #92FFC0 10%, #002661 100%); */
+  /* background-image: linear-gradient(135deg, #81FFEF 10%, #F067B4 100%); */
   background-image: linear-gradient(135deg, #13547a 10%, #80d0c7 100%);
   border: none;
   color: white;
@@ -110,17 +117,19 @@ button {
 button:hover {
   opacity: 0.9;
 }
+
 /* end navigation bar*/
 
 /* start index */
 .s-1 {
   min-height: 100vh;
-  background:url('../img/banner.jpg');
+  background: url('../img/banner.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 75%;
   position: relative;
 }
+
 .banner-text {
   position: absolute;
   top: 30%;
@@ -129,22 +138,75 @@ button:hover {
   background-color: transparent;
 }
 
-.banner-text h2 {
+.banner-text h1 {
   font-size: 30px;
   font-size: 7vw;
   background-color: transparent;
-  opacity: 65%;
+  opacity: 75%;
   background: -webkit-linear-gradient(#13547a, #80d0c7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-p {
+.banner-text p {
   color: #151515;
   opacity: 40%;
   background-color: transparent;
   max-width: 550px;
-  height: auto;font-size: 30px;
-  font-size: 3.5vw;
+  height: auto;
+  font-size: 30px;
+  font-size: 1vw;
+}
+
+.s-2 {
+  min-height: auto;
+  justify-content: center;
+  padding: 25px;
+}
+
+.s-2 h1 {
+  font-size: 3vw;
+  font-weight: 300;
+  text-align: center;
+  margin: 0 auto;
+  padding: 25px;
+}
+
+.s-2 p {
+  font-size: 1em;
+  font-weight: thin;
+  opacity: 40%;
+  text-align: center;
+  line-height: 2;
+  align-content: center;
+  margin: 0 auto;
+  padding: 25px;
+}
+
+.s-3 {
+  justify-content: center;
+  padding: 25px;
+  min-width: auto
+}
+
+.s-3 h2 {
+  font-size: 3vw;
+  font-weight: 300;
+  text-align: center;
+  margin: 0 auto;
+  padding: 25px;
 }
 /* end index */
+
+
+/* start media query index */
+@media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 36px;
+  }
+  .s-2 h1 {
+    font-size: 60px;
+  }
+}
+
+/* end media query index */
