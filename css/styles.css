@@ -10,7 +10,9 @@ Shades of gray #222125 #0c0b13 #0b0f13 #0d1116 #0d1316 #1b2026
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
-  background-color: rgb(250, 250, 250)
+  background-color: rgb(250, 250, 250);
+  cursor: none;
+  scrollbar-width: none;
 }
 
 html {
@@ -43,7 +45,6 @@ h1, h2, h3, h4, h5, h6, p {
 li,
 a {
   font-size: 16px;
-  font-weight: regular;
   text-decoration: none;
   background: transparent;
 }
@@ -68,6 +69,13 @@ header {
   background: -webkit-linear-gradient(#13547a, #80d0c7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease 0s;
+  position: relative;
+}
+
+.logo a:hover {
+  letter-spacing: 0.1rem;
+  display: inline-block;
 }
 
 nav {
@@ -85,18 +93,15 @@ nav {
   color:#13547a;
 }
 
-.nav-links li {
-  transition: all 0.3s ease 0s;
+.nav-links li a {
   cursor: pointer;
   color:#13547a;
+  transition: all 0.3s ease 0s;
 }
 
-.nav-links li:hover {
-  color: white;
-}
-
-.nav-links li:active {
-  color: white;
+.nav-links li a:hover {
+  opacity: 70%;
+  letter-spacing: 0.1rem;
 }
 
 button {
@@ -115,14 +120,61 @@ button {
 }
 
 button:hover {
+  letter-spacing: 0.1rem;
   opacity: 0.9;
 }
 
 /* end navigation bar*/
+/* start custom cursor */
 
+.inner-cursor {
+  position: fixed;
+  left: 10px;
+  width: 7px;
+  height: 7px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: width 0.5s, height 0.5s;
+  z-index: 9999;
+}
+
+.inner-cursor.grow {
+  width: 55px;
+  height: 55px;
+  transition: width 0.5s, height 0.5s;
+  z-index: 9999;
+}
+
+.outer-cursor {
+  position: fixed;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: 0.05s;
+  z-index: 9999;
+}
+
+.outer-cursor.grow {
+  width: 67px;
+  height: 67px;
+  border: 3px solid #fff;
+  transition: width 0.5s, height 0.5s;
+  z-index: 9999;
+}
+
+/* end custom cursor */
 /* start index */
 .s-1 {
-  min-height: 100vh;
+  min-height: 80vh;
   background: url('../img/banner.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -186,7 +238,11 @@ button:hover {
 .s-3 {
   justify-content: center;
   padding: 25px;
+  height: 100vh;
   min-width: auto
+}
+.s-3 h1 {
+  text-align: center;
 }
 
 .s-3 h2 {
