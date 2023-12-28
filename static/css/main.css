@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+  background: #FDFDF0;
+  letter-spacing: 0.1rem;
+}
+
+header {
+  height: 100svh;
+  width: 100svw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+}
+
+header h1 {
+  font-weight: 300;
+  font-size: 2.5rem;
+}
+
+header h2 {
+  font-weight: 300;
+  font-size: 2.5rem;
+  max-width: 700px;
+}
+
+header h2 span {
+  font-weight: 500;
+}
+
+header h3 {
+  font-weight: 300;
+  font-size: 1.25rem;
+
+}
+
+.background {
+  margin: auto;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  max-width: 700px;
+}
+
+.background-title {
+  font-weight: 500;
+  margin-right: 50px;
+  width: 96px;
+  font-size: 1rem;
+  text-align: right;
+  text-transform: uppercase;
+  color: orangered;
+}
+
+.background-paragraph {
+  font-size: 15px;
+  font-weight: 300;
+  width: 554px;
+}
+
+
+.skills {
+  margin: auto;
+  height: 350px;
+  display: flex;
+  max-width: 700px;
+  justify-content: center;
+}
+
+.skills-title {
+  margin-right: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 96px;
+  text-align: right;
+  text-transform: uppercase;
+  color: orangered;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: space-between;
+  width: 554px;
+}
+
+.skills-category {
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-label {
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.skills-list {
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list li {
+  height: 30px;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.call-to-action {
+  padding: 10px 20px;
+  color: orangered;
+  border: solid 2px orangered;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.5s 0.1s, background 0.5s 0.2s, letter-spacing 0.2s 0.5s;
+}
+
+
+.call-to-action:hover {
+  background: orangered;
+  color: white;
+  letter-spacing: 0.15em;
+}
