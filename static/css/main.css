@@ -65,7 +65,7 @@ header h3 {
 }
 
 .background-paragraph {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 300;
   width: 554px;
 }
@@ -117,18 +117,18 @@ header h3 {
 .skills-list li {
   height: 30px;
   font-weight: 300;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .call-to-action {
   padding: 10px 20px;
   color: orangered;
+  background: transparent;
   border: solid 2px orangered;
   border-radius: 5px;
   font-size: 16px;
   font-weight: 500;
-  text-decoration: none;
-  transition: color 0.5s 0.1s, background 0.5s 0.2s, letter-spacing 0.2s 0.5s;
+  transition: color 0.5s 0.1s, background 0.5s 0.2s, letter-spacing 0.2s 0.2s;
 }
 
 
@@ -137,3 +137,5 @@ header h3 {
   color: white;
   letter-spacing: 0.15em;
 }
+
+@import url("media_queries.css")
