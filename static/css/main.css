@@ -7,12 +7,12 @@
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
   background: #FDFDF0;
+  /* background: #212121; */
   letter-spacing: 0.1rem;
 }
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 
 header {
@@ -21,7 +21,6 @@ header {
   flex-direction: column;
   justify-content: center;
   padding: 50px;
-  overflow-x: hidden;
 }
 
 header h1 {
@@ -137,5 +136,72 @@ header h3 {
   color: white;
   letter-spacing: 0.15em;
 }
+
+.projects {
+  margin: auto;
+  height: 350px;
+  display: flex;
+  max-width: 700px;
+  justify-content: center;
+}
+
+.project-container {
+  margin: 0;
+  max-width: 700px;
+  display: flex;
+}
+
+
+.carousel {  
+  scroll-snap-type: x mandatory; /* <- the important piece */
+  height: auto;
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  scroll-padding: 0 24px;
+  /* -webkit-mask-image: linear-gradient(45deg, #000, rgba(0,0,0,0)); */
+  /* mask-image: linear-gradient(45deg, #000, rgba(0,0,0,0.5)); */
+}  
+
+.carousel .item {  
+  scroll-snap-align: center; /* <- the other important piece */
+  flex-shrink: 0;
+  margin: 20px;
+  height: 740px;
+  width: 405px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  background: lightpink;
+}  
+
+.carousel .item:hover {  
+  cursor: pointer;
+}
+
+
+.carousel .item h3 {
+  position: absolute;
+  text-transform: uppercase;
+  font-weight: 400;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}  
+
+.carousel .item img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: auto;
+  border-radius: 15px;
+  transition: scale 0.5s ease;
+}  
+
+.carousel .item img:hover {
+  scale: 1.05;
+}
+
 
 @import url("media_queries.css")
