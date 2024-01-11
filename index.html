@@ -8,133 +8,122 @@
   </head>
   <body>
     <header>
-      <h1>Hi there!</h1>
-      <h2>
-        <span class="name">Stew here</span>, a design-driven developer building with intention and loves learning new things quickly with passion.
-      </h2>
-      <h3>
-        Want to talk? <span><button class="call-to-action" href="mailto:histeward@proton.me?subject=I want to get in touch!">Get in touch</button></span> 
-      </h3>
+      <div class="hero fade-left-hidden">
+        <h1>Hi there!</h1>
+        <h2>
+          <span class="name">Stew here.</span> Don't you think engineering is the closest thing to magic there is? 
+        </h2>
+        <h3>
+          Want to talk? <a type="button" class="call-to-action" href="mailto:histeward@proton.me">get in touch</a>
+        </h3>
+      </div>
+
+      <div class="iphone-container fade-right-hidden">
+        <div class="iphone-xv">
+          <div class="speaker"></div>
+          <div class="camera"></div>
+          
+          <img class="iphone-gif" loading="lazy" src="static/images/hero.gif" alt="">
+
+        </div>
+
+      </div>
     </header>
 
-    <section class="">
-      <div></div>
-    </section>
+    <section>
+      <div class="background">
+        <div class="background-title fade-left-hidden"><h3>Background</h3></div>
+        <div class="background-paragraph fade-left-hidden">
+          <p>
+            I grew up exercising and worked together with the a group of amazing people and the dutch govenrment to build
+            Calisthenic parks and basketball courts in our city.
+          </p>
+          <p>
+            I graduated in <span style="font-weight: 500;">Physical Education and Sports</span> and worked as a personal
+            trainer and content creator. My interests eventually led me to gain and develop technical skills where I would build
+            websites and e-commerce stores.
+          </p>
+          <p>
+            When I am not on my computer I tend to go out and exercise or making soufflé pancakes. Pancakes are the best!
+          </p>
+        </div>
+      </div>
 
-    <section class="background">
-      <div class="background-title"><p>Background</p></div>
-      <div class="background-paragraph">
-        <p>
-          I grew up always exercising and worked together with the some people and the dutch govenrment to build Calisthenics
-          training parks and basketball courts in our city. 
-        </p>
-        <p>
-          I graduated in <span style="font-weight: 500;">Physical Education and Sports</span> and worked as a personal
-          trainer and content creator. My interests eventually led me to gain and develop technical skills where I would build
-          websites and e-commerce stores.
-        </p>
-        <p>
-          When I am not on my computer I tend to go out and exercise or making soufflé pancakes. Pancakes are the best!
-        </p>
-
+      <div class="skills">
+        <div class="skills-title fade-left-hidden"><h3>Skills</h3></div>
+        <div class="skills-wrapper">
+          <div class="skills-category fade-top-hidden ">
+            <div class="skills-label">Languages</div>
+            <ul class="skills-list fade-left-hidden">
+              <li>Python</li>
+              <li>Golang</li>
+              <li>Css</li>
+              <li>Html</li>
+              <li>Javascript</li>
+            </ul>
+          </div>
+          <div class="skills-category fade-top-hidden ">
+            <div class="skills-label">Frameworks</div>
+            <ul class="skills-list fade-left-hidden">
+              <li>Flask</li>
+              <li>Echo</li>
+              <li>Sveltekit</li>
+            </ul>
+          </div>
+          <div class="skills-category fade-top-hidden ">
+            <div class="skills-label">Tools</div>
+            <ul class="skills-list fade-left-hidden">
+              <li>Neovim</li>
+              <li>Git</li>
+              <li>Bash</li>
+              <li>Sqlite</li>
+              <li>Postgresql</li>
+            </ul>
+          </div>
+          <div class="skills-category fade-top-hidden ">
+            <div class="skills-label">Other</div>
+            <ul class="skills-list fade-left-hidden">
+              <li>Photography</li>
+              <li>Video editing</li>
+              <li>Powerlifting</li>
+              <li>Calisthenics</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="skills">
-      <div class="skills-title">Skills</div>
-      <div class="skills-container">
-        <div class="skills-category">
-          <div class="skills-label">Languages</div>
-          <ul class="skills-list">
-            <li>Python</li>
-            <li>Golang</li>
-            <li>Css</li>
-            <li>Html</li>
-            <li>Javascript</li>
-          </ul>
-        </div>
-        <div class="skills-category">
-          <div class="skills-label">Frameworks</div>
-          <ul class="skills-list">
-            <li>Flask</li>
-            <li>Echo</li>
-            <li>Sveltekit</li>
-          </ul>
-        </div>
-        <div class="skills-category">
-          <div class="skills-label">Tools</div>
-          <ul class="skills-list">
-            <li>Neovim</li>
-            <li>Git</li>
-            <li>Bash</li>
-            <li>Sqlite</li>
-            <li>Postgresql</li>
-          </ul>
-        </div>
-        <div class="skills-category">
-          <div class="skills-label">Other</div>
-          <ul class="skills-list">
-            <li>Photography</li>
-            <li>Video editing</li>
-            <li>Powerlifting</li>
-            <li>Calisthenics</li>
-          </ul>
+    <section>
+      <div class="carousel-container">
+        <div class="carousel">
+          <div  class="item fade-hidden">
+            <h3>Wat kan er nou gebeuren</h3>
+            <img src="https://www.najibamhali.nl/wp-content/uploads/2019/03/najib-amhali-biografie-scaled.jpg" alt="">
+          </div>
+          <div  class="item fade-hidden">
+            <h3>Calisthenics park</h3>
+            <img src="https://www.platformbuitenspelen.nl/sites/default/files/oldarticleimages/header_429.jpg" alt="">
+          </div>
+          <div  class="item fade-hidden">
+            <h3>Basketball court</h3>
+            <img src="https://scontent.frtm1-1.fna.fbcdn.net/v/t39.30808-6/299318340_409709597927810_5808302106415538239_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=SDmufDjYmzUAX9DZWz7&_nc_oc=AQn4QKttwyNxNjhb_uz8iN3OtOo0pmG_LQoL0OboDolfG74k1nGlJCjgox5hEIzbJi4&_nc_ht=scontent.frtm1-1.fna&oh=00_AfBlz9lIezHOBYjOtKWwrtqEJiDA5A_9PzreLxbMVAS96Q&oe=65A2F88F" alt="">
+          </div>
+          <div  class="item fade-hidden">
+            <h3>Film career</h3>
+            <img src="./static/images/me2.jpg" alt="">
+          </div>
+          <!-- <div  class="item fade-hidden"> -->
+          <!--   <h3>Project title</h3> -->
+          <!--   <img src="" alt=""> -->
+          <!-- </div> -->
         </div>
       </div>
     </section>
 
-    <!-- <section class="projects"> -->
-    <!--   <div class="projects-container"> -->
-    <!--     <div class="project-item"> -->
-    <!--       <h3>Project title</h3> -->
-    <!--     </div> -->
-    <!--     <div class="project-item"> -->
-    <!--       <h3>Project title</h3> -->
-    <!--     </div> -->
-    <!--     <div class="project-item"> -->
-    <!--       <h3>Project title</h3> -->
-    <!--     </div> -->
-    <!--     <div class="project-item"> -->
-    <!--       <h3>Project title</h3> -->
-    <!--     </div> -->
-    <!--     <div class="project-item"> -->
-    <!--       <h3>Project title</h3> -->
-    <!--     </div> -->
-    <!--   </div> -->
+    <!-- <section> -->
     <!-- </section> -->
 
-    <carousel>
-      <section class="carousel">
-        <lockup  class="item">
-          <h3>Project title</h3>
-          <img src="" alt="">
-        </lockup>
-        <lockup  class="item">
-          <h3>Project title</h3>
-          <img src="" alt="">
-        </lockup>
-        <lockup  class="item">
-          <h3>Project title</h3>
-          <img src="" alt="">
-        </lockup>
-        <lockup  class="item">
-          <h3>Project title</h3>
-          <img src="" alt="">
-        </lockup>
-        <lockup  class="item">
-          <h3>Project title</h3>
-          <img src="" alt="">
-        </lockup>
-        <lockup  class="item">
-          <h3>Project title</h3>
-          <img src="" alt="">
-        </lockup>
-        <lockup  class="item">
-          <h3>Project title</h3>
-          <img src="" alt="">
-        </lockup>
-      </section>
-    </carousel>
+    <script defer src="static/js/main.js"></script>
 
   </body>
 </html>
