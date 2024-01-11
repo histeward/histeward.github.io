@@ -2,7 +2,7 @@
 
 * {
   /* to debug */
-  /* border: solid 1px green; */
+  border: solid 1px green;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
@@ -163,7 +163,7 @@ section {
 
 .carousel-container {
   margin: auto;
-  width: fit-content;
+  width: 100%;
   max-width: 1335px;
   overflow: hidden;
 }
