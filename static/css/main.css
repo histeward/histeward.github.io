@@ -186,7 +186,7 @@ section {
   border-radius: 15px;
   overflow: hidden;
   position: relative;
-  background: green;
+  background: linear-gradient(45deg, #3f87a6, #ebf8e1, #f69d3c);
 }  
 
 .item:hover {  
@@ -419,12 +419,12 @@ section {
     flex-wrap: wrap;
   }
 
-  .carousel .item {  
+  .item {  
     width: 260px;
     height: 480px;
   }
 
-  .carousel .item h3 {  
+  .item h3 {  
     font-size: 0.8rem;
   }
 
