@@ -14,15 +14,12 @@
           <span class="name">Stew here.</span> Don't you think engineering is the closest thing to magic there is? 
         </h2>
         <h3>
-          Want to talk? <a type="button" class="call-to-action" href="mailto:histeward@proton.me">get in touch</a>
-        </h3>
+          Want to talk? <button class="call-to-action" onclick="openEmail()">Get in touch</button>        </h3>
       </div>
 
       <div class="iphone-container fade-right-hidden">
         <div class="iphone-xv">
-          <div class="speaker"></div>
           <div class="camera"></div>
-
 
           <video class="iphone-video" autoplay loop muted>
             <source src="static/images/hero_vid.mp4" type="video/mp4">
@@ -36,7 +33,9 @@
 
     <section>
       <div class="background">
-        <div class="background-title fade-left-hidden"><h3>Background</h3></div>
+        <div class="background-title fade-left-hidden">
+          <h3>Background</h3>
+        </div>
         <div class="background-paragraph fade-left-hidden">
           <p>
             I grew up exercising and worked together with the a group of amazing people and the dutch govenrment to build
@@ -56,7 +55,7 @@
       <div class="skills">
         <div class="skills-title fade-left-hidden"><h3>Skills</h3></div>
         <div class="skills-wrapper">
-          <div class="skills-category fade-top-hidden ">
+          <div class="skills-category fade-bottom-hidden ">
             <div class="skills-label">Languages</div>
             <ul class="skills-list fade-left-hidden">
               <li>Python</li>
@@ -66,7 +65,7 @@
               <li>Javascript</li>
             </ul>
           </div>
-          <div class="skills-category fade-top-hidden ">
+          <div class="skills-category fade-bottom-hidden ">
             <div class="skills-label">Frameworks</div>
             <ul class="skills-list fade-left-hidden">
               <li>Flask</li>
@@ -74,7 +73,7 @@
               <li>Sveltekit</li>
             </ul>
           </div>
-          <div class="skills-category fade-top-hidden ">
+          <div class="skills-category fade-bottom-hidden ">
             <div class="skills-label">Tools</div>
             <ul class="skills-list fade-left-hidden">
               <li>Neovim</li>
@@ -84,7 +83,7 @@
               <li>Postgresql</li>
             </ul>
           </div>
-          <div class="skills-category fade-top-hidden ">
+          <div class="skills-category fade-bottom-hidden ">
             <div class="skills-label">Other</div>
             <ul class="skills-list fade-left-hidden">
               <li>Photography</li>
@@ -99,33 +98,61 @@
 
     <section>
       <div class="carousel-container">
+        <h1>featured</h1>
         <div class="carousel">
-          <div  class="item fade-hidden">
+          <button  class="item fade-hidden modal-button" data-modal="modal-1">
             <h3>Wat kan er nou gebeuren</h3>
             <img src="https://www.najibamhali.nl/wp-content/uploads/2019/03/najib-amhali-biografie-scaled.jpg" alt="">
-          </div>
-          <div  class="item fade-hidden">
+          </button>
+          <button  class="item fade-hidden">
             <h3>Calisthenics park</h3>
             <img src="https://www.platformbuitenspelen.nl/sites/default/files/oldarticleimages/header_429.jpg" alt="">
-          </div>
-          <div  class="item fade-hidden">
-            <h3>Basketball court</h3>
-            <img src="https://scontent.frtm1-1.fna.fbcdn.net/v/t39.30808-6/299318340_409709597927810_5808302106415538239_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=SDmufDjYmzUAX9DZWz7&_nc_oc=AQn4QKttwyNxNjhb_uz8iN3OtOo0pmG_LQoL0OboDolfG74k1nGlJCjgox5hEIzbJi4&_nc_ht=scontent.frtm1-1.fna&oh=00_AfBlz9lIezHOBYjOtKWwrtqEJiDA5A_9PzreLxbMVAS96Q&oe=65A2F88F" alt="">
-          </div>
-          <div  class="item fade-hidden">
+          </button>
+          <button  class="item fade-hidden">
             <h3>Film career</h3>
             <img src="./static/images/me2.jpg" alt="">
-          </div>
-          <!-- <div  class="item fade-hidden"> -->
-          <!--   <h3>Project title</h3> -->
-          <!--   <img src="" alt=""> -->
-          <!-- </div> -->
+          </button>
+          <button  class="item fade-hidden">
+            <h3>Project title</h3>
+            <img src="" alt="">
+          </button>
         </div>
       </div>
     </section>
 
     <!-- <section> -->
+    <!--   <div class="blog-container"> -->
+    <!--     <h1>blog</h1> -->
+    <!--     <div class="blog"> -->
+    <!--       <!-- <div class="modal-button blog-item" data-modal="modal1">modal 1</div> --> -->
+    <!--       <div class="modal-button blog-item" data-modal="modal2">modal 2</div> -->
+    <!--       <div class="modal-button blog-item" data-modal="modal3">modal 3</div> -->
+    <!--       <div class="modal-button blog-item" data-modal="modal4">modal 4</div> -->
+    <!--       <div class="modal-button blog-item" data-modal="modal5">modal 5</div> -->
+    <!--       <div class="modal-button blog-item" data-modal="modal6">modal 6</div> -->
+    <!--     </div> -->
+    <!--   </div> -->
     <!-- </section> -->
+
+    <!-- modals -->
+    <div id="modal-1" class="modal">
+
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id facilis sequi maiores aspernatur ad dicta necessitatibus
+          magni ratione commodi, pariatur, aut cumque fuga inventore! Quam ratione nemo voluptas esse, voluptatibus distinctio
+          rem at doloremque quos commodi accusantium quia voluptatum fuga assumenda vel, iure animi error perferendis sequi
+          pariatur nisi laboriosam.</p>
+      </div>
+    </div>
+
+    <div id="modal2" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Some text in the Modal 2..</p>
+      </div>
+    </div>
 
     <script defer src="static/js/main.js"></script>
 

@@ -6,6 +6,8 @@
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
@@ -18,6 +20,15 @@
 body {
   margin: 0;
   padding: 0;
+}
+
+section {
+  margin: auto;
+  min-height: 400px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 header {
@@ -55,15 +66,6 @@ header {
 
 }
 
-section {
-  margin: auto;
-  min-height: 400px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .call-to-action {
   padding: 10px 20px;
   color: orangered;
@@ -77,37 +79,44 @@ section {
   white-space: nowrap;
 }
 
+
 .call-to-action:hover {
   background: orangered;
   color: white;
   letter-spacing: 0.15em;
 }
 
+/* BACKGROUND AND SKILLS SECTION */
+
 .background {
   margin: auto;
-  max-width: 800px;
+  width: 100%;
   height: auto;
   display: flex;
-  /* justify-content: center; */
-  /* justify-content: space-evenly; */
-  border-radius: 15px;
+  justify-content: center;
   padding: 50px 30px;
 }
 
 .background-title {
+  height: 100%;
+  width: auto;
+}
+
+.background-title h3 {
   font-weight: 500;
-  margin-right: 50px;
-  width: 200px;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  width: auto;
   text-align: right;
   text-transform: uppercase;
   color: orangered;
+  display: block;
+
 }
 
 .background-paragraph {
   font-size: 16px;
   font-weight: 300;
-  width: 600px;
+  max-width: 900px;
 }
 
 
@@ -122,8 +131,8 @@ section {
 
 .skills-title {
   margin-right: 50px;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 400;
   width: 200px;
   text-align: right;
   text-transform: uppercase;
@@ -133,12 +142,13 @@ section {
 .skills-wrapper {
   display: flex;
   justify-content: space-between;
-  width: 600px;
+  width: auto;
 }
 
 .skills-category {
   display: flex;
   flex-direction: column;
+  padding: 10px;
 }
 
 .skills-label {
@@ -161,11 +171,23 @@ section {
   font-size: 16px;
 }
 
+/* CAROUSEL */
+
 .carousel-container {
   margin: auto;
   width: 100%;
   max-width: 1335px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.carousel-container h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.5rem;
 }
 
 .carousel {  
@@ -175,6 +197,7 @@ section {
   display: flex;
   overflow: auto;
   scroll-padding: 0 24px;
+  padding: 0 50px;
 }  
 
 .item {  
@@ -187,28 +210,34 @@ section {
   overflow: hidden;
   position: relative;
   background: linear-gradient(45deg, #3f87a6, #ebf8e1, #f69d3c);
+  border: transparent;
 }  
 
 .item:hover {  
+  transition: scale 0.3s ease;
   cursor: pointer;
-}
+  scale: 1.01;
 
+}
 
 .item h3 {
   position: absolute;
-  text-transform: uppercase;
+  width: 100%;
+  top: 40%;
+  font-size: 16px;
   font-weight: 400;
+  text-transform: uppercase;
   letter-spacing: 0.4rem;
+  text-align: center;
   line-height: 2.0rem;
-  left: 10%;
-  /* transform: translateX(-50%); */
   color: white;
   text-shadow: gray 1px 0 10px;
-  z-index: 10;
+  z-index: 50;
 }  
 
 .item img {
   position: absolute;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   height: 100%;
@@ -220,7 +249,52 @@ section {
 
 .item img:hover {
   scale: 1.05;
+  filter: brightness(100%);
 }
+
+/* BLOG GRID  */
+
+.blog-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.blog-container h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.5rem;
+}
+
+.blog {
+  width: auto;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 300px 300px 300px   ;
+  grid-template-rows: 300px 300px 300px ;
+  gap: 10px;
+  padding: 10px;
+
+}
+
+.blog-item {
+  width: auto;
+  height: auto;
+  background: linear-gradient(45deg, #3f87a6, #ebf8e1, #f69d3c);
+  border: transparent;
+  border-radius: 15px;
+  transition: scale 0.5s ease;
+}
+
+.blog-item:hover {
+  cursor: pointer;
+  scale: 1.02;
+}
+
 
 /* JS ANIMATIONS WHEN IN VIEWPORT */
 
@@ -330,26 +404,12 @@ section {
   }
 }
 
-.speaker,
 .camera {
   position: absolute;
   display: block;
   color: transparent;
   z-index: 2;
 }
-
-/* top speaker */
-.speaker {
-  left: 50%;
-  transform: translate(-50%, -5px);
-  height: 7px;
-  width: 27%;
-  background-color: #191919;
-  border-bottom-left-radius: 9px;
-  border-bottom-right-radius: 9px;
-  box-shadow: inset 0 9px 3px 0px rgba(135, 134, 132, 0.1);
-}
-
 
 /* front camera */
 .camera {
@@ -385,6 +445,59 @@ section {
   z-index: 1;
 }
 
+/* CSS FOR MODALS */
+
+.modal {
+  opacity: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%; 
+  height: 100%; 
+  padding: 50px;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  z-index: 50;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border-radius: 15px;
+  width: fit-content;
+  height: auto;
+  z-index: 151;
+}
+
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  background: orange;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  padding: 2px;
+  text-align:center;
+  scale: 0.9;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* HIDE HORIZONTAL SCROLL BAR IN SAFARI */
+
 .carousel::-webkit-scrollbar {
   width:0px;
 }
@@ -400,41 +513,7 @@ section {
 }
 
 @media screen and (max-width: 767px) {
-  .background {
-    flex-direction: column;
-  }
 
-  .background-title, skills-title {
-    text-align: left;
-    font-weight: 100;
-  }
-
-  .skills {
-    flex-direction: column;
-  }
-
-  .skills-title {
-    margin: auto;
-    text-align: center;
-  }
-
-  .skills-wrapper {
-    margin: auto;
-    flex-wrap: wrap;
-  }
-
-  .item {  
-    width: 260px;
-    height: 480px;
-  }
-
-  .item h3 {  
-    font-size: 0.8rem;
-  }
-
-  .iphone-xv {
-    display: none;
-  }
 }
 
 /* Medium screens */
