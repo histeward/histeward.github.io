@@ -1,59 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
+
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/css/main.css">
     <title>Homepage</title>
   </head>
+
   <body>
+
     <header>
+      <nav class="nav-container">
+        <button aria-hidden="true" class="nav-item" onclick="goHome()">
+          <i class="fa-solid fa-house"></i>
+        </button>
+        <button aria-hidden="true" class="nav-item" onclick="toggleTheme()">
+          <i class=" fa-solid fa-circle-half-stroke"></i>
+        </button>
+        <button aria-hidden="true" class="nav-item" onclick="openEmail()">
+          <i class="fa-solid fa-envelope"></i>
+        </button>
+        <button class="nav-item open-nav" onclick="toggleNav()">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </nav>
+
       <div class="hero fade-left-hidden">
-        <h1>Hi there!</h1>
-        <h2>
-          <span class="name">Stew here.</span> Don't you think engineering is the closest thing to magic there is? 
-        </h2>
-        <h3>
-          Want to talk? <button class="call-to-action" onclick="openEmail()">Get in touch</button>        </h3>
+        <div>
+          <h1>Hi there!</h1>
+          <h2>
+            <span class="name">Stew here.</span> Don't you think engineering is the closest thing to magic there is?
+          </h2>
+        </div>
+        <div>
+        </div>
       </div>
 
       <div class="iphone-container fade-right-hidden">
         <div class="iphone-xv">
           <div class="camera"></div>
 
-          <video class="iphone-video" autoplay loop muted>
-            <source src="static/images/hero_vid.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-          </video>
-
+          <div class="mp3-container">
+            <div class="album-cover-container">
+              <img src="./static/images/me.jpeg" alt="">
+            </div>
+            <div class="song-title">
+              Welcome and hello there!
+            </div>
+            <div class="progress-bar">
+              <div class="progress-bar-fill"></div>
+            </div>
+            <div id="backward-step" class="button-container">
+              <button id="backward-step" class="action-button" onclick="resetSong()">
+                <i class="fa-solid fa-backward-step"></i>
+              </button>
+              <button id="playPause" class="action-button" onclick="togglePlayPause()">
+                <i class="fas fa-play"></i>
+              </button>
+              <button id="forward-step" class="action-button">
+                <i class="fa-solid fa-forward-step"></i>
+              </button>
+            </div>
+          </div>
         </div>
-
       </div>
+
     </header>
 
-    <section>
+    <section class="overview">
+
       <div class="background">
         <div class="background-title fade-left-hidden">
-          <h3>Background</h3>
+          <h2>Background</h2>
         </div>
         <div class="background-paragraph fade-left-hidden">
           <p>
-            I grew up exercising and worked together with the a group of amazing people and the dutch govenrment to build
-            Calisthenic parks and basketball courts in our city.
+            I grew up exercising and worked together with the a group of amazing people and the dutch government to build
+            <span class="bold">calisthenics parks and basketball courts</span> in our city.
           </p>
+          <br>
           <p>
-            I graduated in <span style="font-weight: 500;">Physical Education and Sports</span> and worked as a personal
-            trainer and content creator. My interests eventually led me to gain and develop technical skills where I would build
+            I graduated in <span class="bold"">Physical Education and Sports</span> and worked as a personal
+            trainer and content creator. My interests eventually led me to gain and develop technical skills where I would
+            build
             websites and e-commerce stores.
           </p>
+          <br>
           <p>
             When I am not on my computer I tend to go out and exercise or making soufflé pancakes. Pancakes are the best!
           </p>
         </div>
       </div>
 
-      <div class="skills">
-        <div class="skills-title fade-left-hidden"><h3>Skills</h3></div>
+      <div class=" skills">
+        <div class="skills-title fade-left-hidden">
+          <h2>Skills</h2>
+        </div>
         <div class="skills-wrapper">
           <div class="skills-category fade-bottom-hidden ">
             <div class="skills-label">Languages</div>
@@ -94,67 +137,69 @@
           </div>
         </div>
       </div>
+
     </section>
 
     <section>
+
       <div class="carousel-container">
-        <h1>featured</h1>
+
+        <h1 class="fade-hidden">my favourite stories</h1>
+
         <div class="carousel">
-          <button  class="item fade-hidden modal-button" data-modal="modal-1">
-            <h3>Wat kan er nou gebeuren</h3>
-            <img src="https://www.najibamhali.nl/wp-content/uploads/2019/03/najib-amhali-biografie-scaled.jpg" alt="">
+          <button class="carousel-item fade-hidden modal-button" data-modal="modal-1">
+            <h3 class="fade-bottom-hidden">Film career</h3>
+            <!-- <img src="./static/images/me2.jpg" alt=""> -->
           </button>
-          <button  class="item fade-hidden">
-            <h3>Calisthenics park</h3>
-            <img src="https://www.platformbuitenspelen.nl/sites/default/files/oldarticleimages/header_429.jpg" alt="">
+          <button class="carousel-item fade-hidden modal-button" data-modal="modal-2">
+            <h3 class="fade-bottom-hidden">project limitless</h3>
+            <!-- <img src="https://www.platformbuitenspelen.nl/sites/default/files/oldarticleimages/header_429.jpg" alt=""> -->
           </button>
-          <button  class="item fade-hidden">
-            <h3>Film career</h3>
-            <img src="./static/images/me2.jpg" alt="">
+          <button class="carousel-item fade-hidden">
+            <h3 class="fade-bottom-hidden">The gym</h3>
+            <img src="" alt="">
           </button>
-          <button  class="item fade-hidden">
-            <h3>Project title</h3>
+          <button class="carousel-item fade-hidden">
+            <h3 class="fade-bottom-hidden"></h3>
             <img src="" alt="">
           </button>
         </div>
-      </div>
-    </section>
 
-    <!-- <section> -->
-    <!--   <div class="blog-container"> -->
-    <!--     <h1>blog</h1> -->
-    <!--     <div class="blog"> -->
-    <!--       <!-- <div class="modal-button blog-item" data-modal="modal1">modal 1</div> --> -->
-    <!--       <div class="modal-button blog-item" data-modal="modal2">modal 2</div> -->
-    <!--       <div class="modal-button blog-item" data-modal="modal3">modal 3</div> -->
-    <!--       <div class="modal-button blog-item" data-modal="modal4">modal 4</div> -->
-    <!--       <div class="modal-button blog-item" data-modal="modal5">modal 5</div> -->
-    <!--       <div class="modal-button blog-item" data-modal="modal6">modal 6</div> -->
-    <!--     </div> -->
-    <!--   </div> -->
-    <!-- </section> -->
+    </section>
 
     <!-- modals -->
     <div id="modal-1" class="modal">
-
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id facilis sequi maiores aspernatur ad dicta necessitatibus
-          magni ratione commodi, pariatur, aut cumque fuga inventore! Quam ratione nemo voluptas esse, voluptatibus distinctio
-          rem at doloremque quos commodi accusantium quia voluptatum fuga assumenda vel, iure animi error perferendis sequi
-          pariatur nisi laboriosam.</p>
+      <div class="modal-window">
+        <button class="close">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <h1>Film journey</h1>
+        <div class="modal-content">
+          <p>
+            my life started here where I learned how to make videos by just having fun!
+            <!-- <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/s5JHhLpGE7U?si=kAO_ywCvV9ANUFTp" title="vid bro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+          </p>
+        </div>
       </div>
     </div>
 
-    <div id="modal2" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Some text in the Modal 2..</p>
+    <div id="modal-2" class="modal">
+      <div class="modal-window">
+        <button class="close">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <h1>Project limitless</h1>
+        <div class="modal-content">
+          <p>
+            A calisthenics team in the Netherlands which started as a fun social gathering to share exercise research and
+            of course exercise together!
+          </p>
+        </div>
       </div>
     </div>
 
     <script defer src="static/js/main.js"></script>
 
   </body>
+
 </html>
