@@ -70,6 +70,7 @@ header {
   align-items: center;
   text-wrap: wrap;
   padding: 50px;
+  overflow-x: hidden;
 }
 
 iframe {
@@ -183,6 +184,7 @@ p {
 .mp3-container {
   width: 100%;
   height: 100%;
+  padding-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -195,8 +197,8 @@ p {
 }
 
 .album-cover-container {
-  width: 320px;
-  height: 320px;
+  width: 90%;
+  aspect-ratio: 1/1;
 
   border-radius: 15px;
   box-shadow: 4px 4px 8px var(--neu-2), -4px -4px 8px var(--neu-1);
@@ -206,10 +208,6 @@ p {
   transition: all 0.5s ease-in-out;
 }
 
-.progress-bar {
-  width: 250px;
-}
-
 .album-cover-container img {
   width: 100%;
   height: auto;
@@ -217,6 +215,7 @@ p {
 
 .song-title {
   font-size: 18px;
+  width: 90%;
   font-weight: bold;
   letter-spacing: 0.2rem;
 }
@@ -279,18 +278,16 @@ p {
 
 .hero h1 {
   /* font-weight: 300; */
-  font-size: 2.5rem;
-  /* font-size: clamp(36px, 4vw, 42px); */
+  /* font-size: 2.5rem; */
+  font-size: clamp(36px, 4vw, 42px);
   color: var(--accent-color);
-  min-width: 400px;
 }
 
 .hero h2 {
   font-weight: 300;
-  font-size: 2.5rem;
-  /* font-size: clamp(26px, 5vw, 42px); */
+  /* font-size: 2.5rem; */
+  font-size: clamp(26px, 5vw, 42px);
   max-width: 700px;
-  min-width: 400px;
 }
 
 .hero h2 span {
@@ -461,7 +458,7 @@ input:checked+.slider:before {
 
 .skills-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   width: auto;
 }
@@ -508,6 +505,7 @@ input:checked+.slider:before {
 .carousel-container h1 {
   text-align: center;
   text-transform: uppercase;
+  font-size: clamp(20px, 4vw, 42px);
   font-weight: 400;
   letter-spacing: 0.5rem;
   padding-bottom: 30px;
@@ -528,7 +526,9 @@ input:checked+.slider:before {
   flex-shrink: 0;
   margin: 20px;
   /* height: 740px; */
-  width: 405px;
+  max-width: 405px;
+  width: 90%;
+  height: 100%;
   aspect-ratio: 9 / 16;
   border-radius: 15px;
   overflow: hidden;
@@ -644,7 +644,9 @@ input:checked+.slider:before {
 /* IPHONE XV NOT SUPER ACCURATE BUT GOOD ENOUGH MOCKUP */
 
 .iphone-container {
-  padding: 55px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
 }
 
 .iphone-xv {
@@ -751,7 +753,6 @@ input:checked+.slider:before {
 
 .modal-window {
   background-color: var(--background-color);
-  ;
   color: var(--text-color);
   padding: 50px;
   border-radius: 15px;
@@ -828,7 +829,15 @@ input:checked+.slider:before {
   background: transparent;
 }
 
-@media screen and (max-width: 767px) {}
+@media screen and (max-width: 767px) {
+  .iphone-xv {
+    scale: 0.9;
+  }
+
+  .modal {
+    padding: 20px;
+  }
+}
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {}
 
