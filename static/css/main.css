@@ -792,10 +792,14 @@ input:checked+.slider:before {
   height: 40px;
   padding: 2px;
   text-align: center;
-  transform: rotate(45deg);
   box-shadow:
     -8px -4px 8px 0px var(--neu-1),
     8px 4px 12px 0px var(--neu-2);
+  overflow: hidden;
+}
+
+.close i {
+    transform: rotate(45deg);
 }
 
 .close:hover,
