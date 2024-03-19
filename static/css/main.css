@@ -63,10 +63,11 @@ section {
 }
 
 header {
-  height: auto;
+  min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   text-wrap: wrap;
   padding: 50px;
@@ -272,25 +273,31 @@ p {
 
 .hero {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1600px;
 }
 
-.hero h1 {
+.hero-txt {
+  margin: auto;
+
+}
+
+.hero-txt h1 {
   /* font-weight: 300; */
   /* font-size: 2.5rem; */
   font-size: clamp(36px, 4vw, 42px);
   color: var(--accent-color);
 }
 
-.hero h2 {
+.hero-txt h2 {
   font-weight: 300;
   /* font-size: 2.5rem; */
   font-size: clamp(26px, 5vw, 42px);
   max-width: 700px;
 }
 
-.hero h2 span {
+.hero-txt h2 span {
   font-weight: 500;
 }
 
@@ -317,75 +324,6 @@ p {
 
 .call-to-action:active {
   box-shadow: var(--inner-shadow);
-}
-
-.lights-off {
-  position: absolute;
-  left: 15px;
-  bottom: 15px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.lights-off p {
-  padding: 0 10px;
-  letter-spacing: 0.2rem;
-}
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* background-color: #ccc; */
-  transition: .4s;
-  border-radius: 34px;
-  box-shadow:
-    -8px -4px 8px 0px var(--neu-1),
-    8px 4px 12px 0px var(--neu-2),
-    4px 4px 4px 0px var(--neu-2) inset,
-    -4px -4px 4px 0px var(--neu-1) inset;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: .4s;
-  border-radius: 50%;
-}
-
-/* input:checked + .slider { */
-/*   background-color: #2196F3; */
-/* } */
-
-input:checked+.slider:before {
-  transform: translateX(26px);
-  /* background-color: var(--link-color); */
-
-  background-color: lightgray;
 }
 
 
@@ -460,20 +398,22 @@ input:checked+.slider:before {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  width: auto;
+  width: 100%;
+  max-width: 700px;
 }
 
 .skills-category {
   display: flex;
   flex-direction: column;
-  padding: 0 10px 30px 0;
+  /* padding: 0 10px 30px 0; */
+  padding: 25px;
 }
 
 .skills-label {
   font-weight: 500;
   font-size: 1rem;
   text-transform: uppercase;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 .skills-list {
@@ -490,7 +430,7 @@ input:checked+.slider:before {
   white-space: nowrap;
 }
 
-/* CAROUSEL */
+/* ####### CAROUSEL ####### */
 
 .carousel-container {
   margin: auto;
@@ -519,6 +459,7 @@ input:checked+.slider:before {
   overflow: auto;
   scroll-padding: 0 24px;
   padding: 0 50px;
+  background: var(--background-color);
 }
 
 .carousel-item {
@@ -541,10 +482,7 @@ input:checked+.slider:before {
 }
 
 .carousel-item:hover {
-  transition: scale 0.3s ease;
   cursor: pointer;
-  scale: 1.01;
-
 }
 
 .carousel-item h3 {
@@ -570,12 +508,13 @@ input:checked+.slider:before {
   height: 100%;
   width: auto;
   border-radius: 15px;
-  transition: scale 0.5s ease;
+  transition: filter 0.5s ease, scale 0.5s ease;
   filter: brightness(70%);
 }
 
 .carousel-item img:hover {
   filter: brightness(100%);
+  scale: 1.01;
 }
 
 /* JS ANIMATIONS WHEN IN VIEWPORT */
@@ -647,6 +586,8 @@ input:checked+.slider:before {
   margin: auto;
   display: flex;
   justify-content: center;
+  min-width: 300px;
+  padding: 20px;
 }
 
 .iphone-xv {
@@ -765,6 +706,7 @@ input:checked+.slider:before {
   font-weight: 700;
   padding-bottom: 50px;
   letter-spacing: 0.2rem;
+  color: var(--accent-color);
 }
 
 .modal-content {
@@ -777,8 +719,10 @@ input:checked+.slider:before {
 }
 
 .modal-content p {
-  font-size: 24px;
+  /* font-size: 24px; */
+  font-size: clamp(16px, 4vw, 24px);
   color: var(--text-color);
+  line-height: 2;
 }
 
 .close {
@@ -811,6 +755,12 @@ input:checked+.slider:before {
     inset 8px 4px 12px 0px var(--neu-2);
 }
 
+iframe {
+  aspect-ratio: 16 / 9;
+  height: auto;
+  width: 100%;
+  max-width: 950px;
+}
 
 
 /* HIDE HORIZONTAL SCROLL BAR IN SAFARI */
@@ -830,6 +780,18 @@ input:checked+.slider:before {
 }
 
 @media screen and (max-width: 767px) {
+  .hero-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 57vh;
+  }
+
+  .background-paragraph {
+    text-align: center;
+  }
   .iphone-xv {
     scale: 0.9;
   }
