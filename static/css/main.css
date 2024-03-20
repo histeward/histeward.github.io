@@ -531,7 +531,7 @@ p {
 .fade-left-hidden {
   opacity: 0;
   transition: filter 0.5s, transform 1.0s, opacity 1.0s;
-  transform: translateX(-50%);
+  transform: translateX(-30%);
   filter: blur(4px);
 }
 
@@ -544,7 +544,7 @@ p {
 .fade-right-hidden {
   opacity: 0;
   transition: filter 0.5s, transform 1.0s, opacity 1.0s;
-  transform: translateX(50%);
+  transform: translateX(30%);
   filter: blur(4px);
 }
 
@@ -557,7 +557,7 @@ p {
 .fade-top-hidden {
   opacity: 0;
   transition: filter 0.5s, transform 1.0s, opacity 1.0s;
-  transform: translateY(-50%);
+  transform: translateY(-30%);
   filter: blur(4px);
 }
 
@@ -570,7 +570,7 @@ p {
 .fade-bottom-hidden {
   opacity: 0;
   transition: filter 0.5s, transform 1.0s, opacity 1.0s;
-  transform: translateY(50%);
+  transform: translateY(30%);
   filter: blur(4px);
 }
 
@@ -769,12 +769,10 @@ iframe {
   width: 0px;
 }
 
-/*track*/
 .carousel::-webkit-scrollbar-track {
   background: transparent;
 }
 
-/*thumb*/
 .carousel::-webkit-scrollbar-thumb {
   background: transparent;
 }
