@@ -792,12 +792,21 @@ iframe {
   .background-paragraph {
     text-align: center;
   }
+
   .iphone-xv {
     scale: 0.9;
   }
 
+  .overview {
+    padding: 20px;
+  }
+
+  .skills-category {
+    padding: 10px;
+  }
+
   .modal {
-    padding: 77px 10px 10px 10px;
+    padding: 87px 10px 10px 10px;
   }
 }
 
