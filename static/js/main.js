@@ -100,11 +100,35 @@ function checkThemePreference() {
     }
 }
 
-checkThemePreference()
+// func for checking device theme pref
+// checkThemePreference()
 
 let mybutton = document.getElementById("scrollUp");
 
 function goHome() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
+}
+
+
+function copyCode(button) {
+    const codeElement = button.closest('.code-box').querySelector('code');
+
+    if (codeElement) {
+        navigator.clipboard.writeText(codeElement.textContent)
+            .then(() => {
+                button.innerHTML = 'copied';
+                button.style.backgroundColor = 'lightgreen';
+
+                setTimeout(() => {
+                    button.innerHTML = 'copy';
+                    button.style.backgroundColor = '';
+                }, 2000);
+            })
+            .catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+    } else {
+        console.error('Code element not found');
+    }
 }

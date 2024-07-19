@@ -1,248 +1,173 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="Hi there! It seems that you have found me!" />
-  <meta property="og:description" content="Enjoy scrolling through the site and get to know me better! Don't worry the site doesn't require cookies so no delicious snacks :P " />
-  <meta property="og:image" content="./static/images/me3.jpg" />
-  <link rel="stylesheet" href="static/css/main.css">
-  <title>Hello there and welcome!</title>
-</head>
-
-<body>
-
-  <header>
-    <nav class="nav-container">
-      <button aria-hidden="true" class="nav-item" onclick="goHome()">
-        <i class="fa-solid fa-house"></i>
-      </button>
-      <button aria-hidden="true" class="nav-item" onclick="toggleTheme()">
-        <i class=" fa-solid fa-circle-half-stroke"></i>
-      </button>
-      <button aria-hidden="true" class="nav-item" onclick="openEmail()">
-        <i class="fa-solid fa-envelope"></i>
-      </button>
-      <button class="nav-item open-nav" onclick="toggleNav()">
-        <i class="fa-solid fa-plus"></i>
-      </button>
-    </nav>
-
-    <div class="hero ">
-      <div class="hero-txt fade-bottom-hidden">
-        <h1>Hi there!</h1>
-        <h2>
-          <span class="name">Stew here.</span> Don't you think engineering is the closest thing to magic there is?
-        </h2>
-      </div>
-  </header>
-
-  <section class="overview">
-
-    <div class="background">
-      <div class="background-title fade-left-hidden">
-        <h2>Background</h2>
-      </div>
-      <div class="background-paragraph fade-left-hidden">
-        <p>
-          I grew up exercising and worked together with the a group of amazing people and the dutch government to build
-          <span class="bold">calisthenics parks and basketball courts</span> in our city.
-        </p>
-        <br>
-        <p>
-          I graduated in <span class="bold"">Physical Education and Sports</span> and worked as a personal
-            trainer and content creator. My interests eventually led me to gain and develop technical skills where I would
-            build
-            websites and e-commerce stores.
-          </p>
-          <br>
-          <p>
-            When I am not on my computer I tend to go out and exercise or making soufflé pancakes. Pancakes are the best!
-          </p>
-        </div>
-      </div>
-
-      <div class=" skills">
-            <div class="skills-title fade-left-hidden">
-              <h2>Skills</h2>
+<html lang="en" class="fade-hidden" data-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Welcome to my personal website" />
+        <meta property="og:description" content="This is where I talk a little about myself" />
+        <meta property="og:image" content="./static/images/autumn.jpg" />
+        <link rel="stylesheet" href="static/css/main.css">
+        <link rel="stylesheet" href="./static/js/highlight/styles/atom-one-dark-reasonable.css">
+        <script src="./static/js/highlight/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        <title>Hi there!👋</title>
+    </head>
+    <body>
+        <section>
+            <div class="hero">
+                <div class="hero-info">
+                    <div class="hero-info-wrapper ">
+                        <p class="fade-hidden">hi there👋, i'm</p>
+                        <h1 class="fade-hidden" style="transition-delay: 400ms;">steward</h1>
+                        <h1 class="fade-hidden" style="transition-delay: 800ms;">design <span class="fade-hidden" style="transition-delay: 900ms;">&</span><span class="fade-hidden" style="transition-delay: 1000ms;"> build</span></h1>
+                        <div>
+                            <span class="fade-hidden" style="transition-delay: 800ms;">#programmer</span>
+                            <span class="fade-hidden" style="transition-delay: 900ms;">#photographer</span>
+                            <span class="fade-hidden" style="transition-delay: 1000ms;">#gymrat</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-img-wrapper fade-hidden"></div>
             </div>
-            <div class="skills-wrapper">
-              <div class="skills-category fade-bottom-hidden ">
-                <div class="skills-label">Languages</div>
-                <ul class="skills-list fade-left-hidden">
-                  <li>Python</li>
-                  <li>Golang</li>
-                  <li>Css</li>
-                  <li>Html</li>
-                  <li>Javascript</li>
-                </ul>
-              </div>
-              <div class="skills-category fade-bottom-hidden ">
-                <div class="skills-label">Frameworks</div>
-                <ul class="skills-list fade-left-hidden">
-                  <li>Flask</li>
-                  <li>Echo</li>
-                  <li>Sveltekit</li>
-                </ul>
-              </div>
-              <div class="skills-category fade-bottom-hidden ">
-                <div class="skills-label">Tools</div>
-                <ul class="skills-list fade-left-hidden">
-                  <li>Neovim</li>
-                  <li>Git</li>
-                  <li>Bash</li>
-                  <li>Sqlite</li>
-                  <li>Postgresql</li>
-                </ul>
-              </div>
-              <div class="skills-category fade-bottom-hidden ">
-                <div class="skills-label">Other</div>
-                <ul class="skills-list fade-left-hidden">
-                  <li>Photography</li>
-                  <li>Video editing</li>
-                  <li>Powerlifting</li>
-                  <li>Calisthenics</li>
-                </ul>
-              </div>
+        </section>
+        <section>
+            <div class="about" id="about">
+                <div class="about-carousel fade-hidden">
+                    <div class="carousel">
+                        <div class="carousel-item" id="autumn"></div>
+                        <div class="carousel-item" id="skate"></div>
+                        <div class="carousel-item" id="video"></div>
+                    </div>
+                </div>
+                <div class="about-info">
+                    <div class="about-info-wrapper">
+                        <h1 class="fade-top-hidden">about me</h1>
+                        <br/>
+                        <p class="fade-hidden" style="transition-delay: 500ms;">
+                        I grew up exercising and worked together with the a group of amazing people and the dutch government to build calisthenics parks and basketball courts in our city.
+                        </p>
+                        <br/>
+                        <p class="fade-hidden" style="transition-delay: 600ms;">
+                        I graduated in Physical Education and Sports and worked as a personal trainer and content creator. My interests eventually led me to gain and develop technical skills where I would build websites and e-commerce stores.
+                        </p>
+                        <br/>
+                        <p class="fade-hidden" style="transition-delay: 700ms;">
+                        When I am not on my computer I tend to go out and exercise or making soufflé pancakes. Pancakes are the best!
+                        </p>
+                        <br/>
+                        <div class="carousel-nav fade-hidden" style="transition-delay: 700ms;">
+                            <a href="#autumn">#autumn</a>
+                            <a href="#skate">#skate</a>
+                            <a href="#video">#video</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-      </div>
+        </section>
+        <section>
+            <div class="photography">
+                <div class="photography-info">
+                    <div class="photography-info-wrapper">
+                        <h1>content</h1>
+                        <br/>
+                        <p>
+                        I like making content, but I don't use social media apps to post it anymore. I found myself getting too
+                        distracted by the endless stream of catvideos and memes. Hours would pass without me even realising it.
+                        </p>
+                        <br/>
+                        <p>
+                        The fun is in the creating part. Capturing these moments in time give me a real sense of fun. 
+                        </p>
+                        <br/>
+                        <div class="carousel-nav">
+                            <a href="#food">#food</a>
+                            <a href="#wedding">#wedding</a>
+                            <a href="#product">#product</a>
+                            <a href="#hobbies">#hobbies</a>
+                            <a href="#skateboarding">#skateboarding</a>
+                            <a href="#gym">#gym</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="photography-carousel">
+                    <div class="carousel">
+                        <div class="carousel-item" id="food">
+                            <div class="food-1"><h3>icecream bun</h3></div>
+                            <div class="food-2"></div>
+                            <div class="food-3"></div>
+                            <div class="food-4"></div>
+                            <div class="food-5"></div>
+                            <div class="food-6"></div>
+                        </div>
+                        <div class="carousel-item" id="wedding">
+                            <div class="wedding-1"></div>
+                            <div class="wedding-2"></div>
+                            <div class="wedding-3"></div>
+                            <div class="wedding-4"></div>
+                            <div class="wedding-5"></div>
+                        </div>
+                        <div class="carousel-item" id="product"></div>
+                        <div class="carousel-item" id="hobbies"></div>
+                        <div class="carousel-item" id="skateboarding"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="code-box">
+                <div class="code-top-bar">
+                    <div>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <h5>vim</h5>
+                    <button class="copy-button" onclick="copyCode(this)">copy</button>
+                </div>
+                <pre><code class="language-go">
+package main
 
-  </section>
+import (
+    "log"
+    "net/http"
+    "html/template"
+    "path/to/handler"
+    "path/to/middleware"
+)
 
-  <section>
+type Templates struct {
+    templates *template.Template
+}
 
-    <div class="carousel-container">
+func main() {
+    router := http.NewServeMux()
 
-      <h1 class="fade-hidden">my favourite stories</h1>
+    router.Handle("/web/static/", 
+        http.StripPrefix("/web/static/", 
+        http.FileServer(http.Dir("web/static"))))
 
-      <div class="carousel">
-        <button class="carousel-item fade-hidden modal-button" data-modal="modal-1">
-          <h3 class="fade-bottom-hidden">Najib Amhali</h3>
-          <img src="https://www.najibamhali.nl/wp-content/uploads/2019/03/najib-amhali-biografie-scaled.jpg" alt="">
-        </button>
-        <button class="carousel-item fade-hidden modal-button" data-modal="modal-2">
-          <h3 class="fade-bottom-hidden">listings nl</h3>
-          <img src="static/images/listings.png" alt="">
-        </button>
-        <button class="carousel-item fade-hidden modal-button" data-modal="modal-3">
-          <h3 class="fade-bottom-hidden">project limitless</h3>
-          <img src="https://www.platformbuitenspelen.nl/sites/default/files/oldarticleimages/header_429.jpg" alt="">
-        </button>
-        <!-- <button class="carousel-item fade-hidden"> -->
-        <!--   <h3 class="fade-bottom-hidden">The gym</h3> -->
-        <!--   <img src="" alt=""> -->
-        <!-- </button> -->
-      </div>
+    router.HandleFunc("/", handler.HomePage)
 
-  </section>
+    log.Fatal(http.ListenAndServe(":3000", middleware.Logging(router)))
+}
+                </code></pre>
+            </div>
+        </section>
+        <script defer src="static/js/main.js"></script>
 
-  <!-- <section> -->
-  <!--   <div class="code-projects"> -->
-  <!--     <div class="grid"> -->
-  <!---->
-  <!---->
-  <!---->
-  <!--     </div> -->
-  <!---->
-  <!--   </div> -->
-  <!-- </section> -->
-
-  <!-- modals -->
-  <div id="modal-1" class="modal">
-    <div class="modal-window">
-      <button class="close">
-        <i class="fa-solid fa-plus"></i>
-      </button>
-      <h1>Najib Amhali "Wat kan er nou gebeuren"
-      </h1>
-      <div class="modal-content">
-        <p>
-          Najib Amhali is a Dutch-Moroccan stand-up comedian and actor who has gained significant popularity in the
-          Netherlands. He was born on April 4, 1971, in Nador, Morocco, and moved to the Netherlands at a young age.
-          Najib is known for his energetic performances, often displaying elements of his multicultural background
-          into his comedy.
-        </p>
-        <br>
-        <p>
-          Najib went on another venture starting a podcast called "Wat kan er nou gebeuren" on Youtube.
-          The podcast provides a platform for Najib to explore a wide range of topics, from personal
-          stories and life lessons to societal issues and cultural insights. What sets "Wat kan er nou gebeuren" apart
-          is its focus on inviting guests with unusual backgrounds and experiences, offering listeners a unique and
-          often thought-provoking perspective on the world.</p>
-        <br>
-        <br>
-        <iframe src="https://www.youtube-nocookie.com/embed/s5JHhLpGE7U?si=kAO_ywCvV9ANUFTp" title="vid bro"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
-        <br>
-        <p>
-
-        </p>
-
-      </div>
-    </div>
-  </div>
-
-  <div id="modal-2" class="modal">
-    <div class="modal-window">
-      <button class="close">
-        <i class="fa-solid fa-plus"></i>
-      </button>
-      <h1>listingsNL "Real Estate"</h1>
-      <div class="modal-content">
-        <p>
-          In 2018 Bas Bakker has founded Listings. Listings is specialized in renting out first class and quality homes
-          in the private sector. We deliver outstanding personal and extensive real estate services. Through the years
-          we’ve obtained contacts with many real estate companies, homeowners, relocating offices and international
-          companies. Finding you the perfect home is our biggest priority.
-          <br>
-          <br>
-          ListingsNL improved their service quality by providing property tours on video which were available on the
-          website, youtube and other social media platforms. Expats were the most common clientele for the company. And
-          that is why the transition to video tours and vertical format content worked very well.
-        </p>
-        <br>
-        <br>
-        <iframe src="https://www.youtube.com/embed/pDt5qZETmjA?si=yTDQQ8MZEhAhST26" title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
-  <div id="modal-3" class="modal">
-    <div class="modal-window">
-      <button class="close">
-        <i class="fa-solid fa-plus"></i>
-      </button>
-      <h1>Project limitless</h1>
-      <div class="modal-content">
-        <p>
-          A calisthenics team in the Netherlands which started as a fun social gathering to share exercise, research and
-          of course exercise together! Together after I placed the basketball court with ST4R a non-profit organisation
-          focused on basketball, I went on another venture to realise a Calisthenics park with two other amazing people
-          with a deep passion for calisthenics.
-          <br>
-          <br>
-          At first it was something innocent but it grew into a bigger community where we all shared the passion for
-          exercise. It was a mean to broaden the perspective on physical health and introduce the basics of human
-          movement through gymnastics and body-weight exercises.
-        </p>
-        <br>
-        <br>
-        <iframe src="https://www.youtube.com/embed/MPp5J_7l4kU?si=fLRIF-7r6SD9eUnf" title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
-  <script defer src="static/js/main.js"></script>
-
-</body>
-
+        <!--    <nav class="nav-container">-->
+        <!--        <button aria-hidden="true" class="nav-item" onclick="goHome()">-->
+        <!--            <i class="fa-solid fa-house"></i>-->
+        <!--        </button>-->
+        <!--        <button aria-hidden="true" class="nav-item" onclick="toggleTheme()">-->
+        <!--            <i class=" fa-solid fa-circle-half-stroke"></i>-->
+        <!--        </button>-->
+        <!--        <button aria-hidden="true" class="nav-item" onclick="openEmail()">-->
+        <!--            <i class="fa-solid fa-envelope"></i>-->
+        <!--        </button>-->
+        <!--        <button class="nav-item open-nav" onclick="toggleNav()">-->
+        <!--            <i class="fa-solid fa-plus"></i>-->
+        <!--        </button>-->
+        <!--    </nav>-->
+    </body>
 </html>
