@@ -12,7 +12,7 @@
 
 *, *:before, *:after {
     /* to debug */
-    /*border: solid 1px lightpink; */main
+    /*border: solid 1px lightpink; */
     box-sizing: border-box;
     min-width: 0;
     min-height: 0;
