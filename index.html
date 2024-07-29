@@ -79,10 +79,10 @@
                         <div class="carousel-nav">
                             <a href="#food">#food</a>
                             <a href="#wedding">#wedding</a>
-                            <a href="#product">#product</a>
-                            <a href="#hobbies">#hobbies</a>
-                            <a href="#skateboarding">#skateboarding</a>
-                            <a href="#gym">#gym</a>
+                            <!--<a href="#product">#product</a>-->
+                            <!--<a href="#hobbies">#hobbies</a>-->
+                            <!--<a href="#skateboarding">#skateboarding</a>-->
+                            <!--<a href="#gym">#gym</a>-->
                         </div>
                     </div>
                 </div>
@@ -103,57 +103,57 @@
                             <div class="wedding-4"></div>
                             <div class="wedding-5"></div>
                         </div>
-                        <div class="carousel-item" id="product">
-                            <div class="product-1"></div>
-                            <div class="product-2"></div>
-                            <div class="product-3"></div>
-                            <div class="product-4"></div>
-                            <div class="product-5"></div>
-                        </div>
+                        <!--<div class="carousel-item" id="product">-->
+                        <!--    <div class="product-1"></div>-->
+                        <!--    <div class="product-2"></div>-->
+                        <!--    <div class="product-3"></div>-->
+                        <!--    <div class="product-4"></div>-->
+                        <!--    <div class="product-5"></div>-->
+                        <!--</div>-->
                     </div>
                 </div>
             </div>
         </section>
-        <section>
-            <div class="code-box">
-                <div class="code-top-bar">
-                    <div>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <h5>vim</h5>
-                    <button class="copy-button" onclick="copyCode(this)">copy</button>
-                </div>
-                <pre><code class="language-go">
-package main
-
-import (
-    "log"
-    "net/http"
-    "html/template"
-    "path/to/handler"
-    "path/to/middleware"
-)
-
-type Templates struct {
-    templates *template.Template
-}
-
-func main() {
-    router := http.NewServeMux()
-
-    router.Handle("/web/static/", 
-        http.StripPrefix("/web/static/", 
-        http.FileServer(http.Dir("web/static"))))
-
-    router.HandleFunc("/", handler.HomePage)
-
-    log.Fatal(http.ListenAndServe(":3000", middleware.Logging(router)))
-}
-                </code></pre>
-            </div>
-        </section>
+<!--        <section>-->
+<!--            <div class="code-box">-->
+<!--                <div class="code-top-bar">-->
+<!--                    <div>-->
+<!--                        <span></span>-->
+<!--                        <span></span>-->
+<!--                        <span></span>-->
+<!--                    </div>-->
+<!--                    <h5>vim</h5>-->
+<!--                    <button class="copy-button" onclick="copyCode(this)">copy</button>-->
+<!--                </div>-->
+<!--                <pre><code class="language-go">-->
+<!--package main-->
+<!---->
+<!--import (-->
+<!--    "log"-->
+<!--    "net/http"-->
+<!--    "html/template"-->
+<!--    "path/to/handler"-->
+<!--    "path/to/middleware"-->
+<!--)-->
+<!---->
+<!--type Templates struct {-->
+<!--    templates *template.Template-->
+<!--}-->
+<!---->
+<!--func main() {-->
+<!--    router := http.NewServeMux()-->
+<!---->
+<!--    router.Handle("/web/static/", -->
+<!--        http.StripPrefix("/web/static/", -->
+<!--        http.FileServer(http.Dir("web/static"))))-->
+<!---->
+<!--    router.HandleFunc("/", handler.HomePage)-->
+<!---->
+<!--    log.Fatal(http.ListenAndServe(":3000", middleware.Logging(router)))-->
+<!--}-->
+<!--                </code></pre>-->
+<!--            </div>-->
+<!--        </section>-->
         <script defer src="static/js/main.js"></script>
 
         <!--    <nav class="nav-container">-->
