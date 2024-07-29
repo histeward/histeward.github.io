@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Welcome to my personal website" />
+        <meta property="og:description" content="This is where I talk a little about myself" />
+        <meta property="og:image" content="./static/images/autumn.jpg" />
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="./highlight/styles/atom-one-dark-reasonable.css">
+        <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+        <script src="./highlight/highlight.min.js"></script>
+        <script defer >hljs.highlightAll();</script>
+        <title>Blog</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="blog-post-section">
+                <div class="blog-post-toolbar">
+                    <div class="blog-posts-toolbar-buttons">
+                        <button class="expand-btn" onclick="resizeBlogNav()">
+                            <svg width="16px" height="16px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M2 18V6C2 4.34315 3.34315 3 5 3H7C8.65685 3 10 4.34315 10 6V18C10 19.6569 8.65685 21 7 21H5C3.34315 21 2 19.6569 2 18Z" stroke="#000000" stroke-width="1.5"></path><path d="M16 3H18C20.2091 3 22 4.79086 22 7V17C22 19.2091 20.2091 21 18 21H16" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 12H18M18 12L15 9M18 12L15 15" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                        </button>
+                        <button class="small-btn" onclick="resizeBlogNav(1)">
+                            shrink
+                        </button>
+                        <button class="close-btn" onclick="resizeBlogNav(2)">
+                            close
+                        </button>
+
+                    </div>
+                </div>
+                <nav class="blog-post-links">
+                    <a href="/blog/index.html?post=blog1" blog-link>
+                        <!--<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" />-->
+                        <h2>Writing a simple rest api in golang</h2>
+                    </a>
+                    <hr>
+                    <a href="/blog/index.html?post=blog2" blog-link>
+                        <!--<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />-->
+                        <h2>data cleaning with python and pandas</h2>
+                    </a>
+                    <hr>
+                    <a href="/blog/index.html?post=blog3" blog-link>
+                        <!--<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />-->
+                        <h2>build a single-page blog application in javascript</h2>
+                    </a>
+                    <hr>
+                    <a href="/blog/index.html?post=blog4" blog-link>Blog Post 4</a>
+                    <hr>
+                    <a href="/blog/index.html?post=blog5" blog-link>Blog Post 5</a>
+                    <hr>
+                    <a href="/blog/index.html?post=blog6" blog-link>Blog Post 6</a>
+                    <hr>
+                    <a href="/blog/index.html?post=blog7" blog-link>Blog Post 7</a>
+                    <hr>
+                    <a href="/blog/index.html?post=blog8" blog-link>Blog Post 8</a>
+                    <hr>
+                    <a href="/blog/index.html?post=blog9" blog-link>Blog Post 9</a>
+                    <hr>
+                    <a href="/blog/index.html?post=blog10" blog-link>Blog Post 10</a>
+                    <hr>
+                </nav>
+            </div>
+            <!--div where the blog posts will appear-->
+            <div id="content"></div>
+        </div>
+        <script src="router.js"></script>
+    </body>
+</html>

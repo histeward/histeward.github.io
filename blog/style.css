@@ -1,0 +1,162 @@
+:root {
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /*letter-spacing: 0.1rem;*/
+    scroll-behavior: smooth;
+    /*font-size: clamp(1rem, 1.5vw, 1.5rem);*/
+    /*background-color: #ecf0f3;*/
+    background-color: #212121;
+}
+
+*, *:before, *:after {
+    /* to debug */
+    /*border: solid 1px lightpink; */
+
+    box-sizing: border-box;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #ccc;
+}
+
+section {
+    max-width: 50em;
+    margin: 0 auto;
+}
+
+.container {
+    display: grid;
+    grid-template-columns:100% 0%;
+    transition: 400ms;
+    height: 100vh;
+}
+
+.blog-post-section {
+    display: grid;
+    grid-template-rows: 50px auto;
+    border-right: solid 1px #ccc;
+}
+
+.blog-post-toolbar {
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: end;
+}
+
+.blog-post-toolbar div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: end;
+    gap: 10px;
+}
+
+.blog-post-toolbar div button {
+    padding: 5px 15px;
+    aspect-ratio: 1 / 1;
+    border-radius: 5px;
+    background-color: #ccc;
+    border: transparent;
+}
+
+.blog-post-toolbar div button:hover {
+    background-color: white;
+}
+
+.blog-post-links {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    overflow: auto;
+}
+
+nav a {
+    height: 100px;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    font-size: 12px;
+    color: #ccc;
+    text-decoration: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    transition: background-color 100ms ease-in-out;
+}
+
+nav a h2 {
+    padding-left: 10px;
+}
+
+nav a img {
+    width: auto;
+    height: 100%;
+}
+
+
+nav a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+hr {
+    max-width: 500px;
+    width: 100%;
+    color: #ccc;
+    margin: auto;
+}
+
+.code-box {
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+}
+
+code {
+    width: 100%;
+    height: fit-content;
+    font-size: 16px;
+    line-height: 1.5em;
+    overflow: auto;
+    margin: 0;
+}
+
+.copy-button {
+    font-size: 12px;
+    width: 70px;
+    padding: 10px 10px;
+    cursor: pointer;
+    height: auto;
+    border: transparent;
+    border-bottom-left-radius: 5px;
+    background-color: #383C44;
+    color: #ccc;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.copy-button:hover {
+    cursor: pointer;
+}
+
+#content {
+    display: none;
+    overflow: auto;
+    padding: 20px;
+}
+
