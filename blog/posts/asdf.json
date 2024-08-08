@@ -1,0 +1,5 @@
+{
+    "title": "Blog Post 1",
+    "date": "01-01-2000",
+    "content": "<section><div class='code-box'><div class='code-top-bar'><div><span></span><span></span><span></span></div><h5>vim</h5><button class='copy-button' onclick='copyCode(this)'>copy</button></div><pre><code class='language-go'>package main\n\nimport (\n    \"log\"\n    \"net/http\"\n    \"html/template\"\n    \"path/to/handler\"\n    \"path/to/middleware\"\n)\n\ntype Templates struct {\n    templates *template.Template\n}\n\nfunc main() {\n    router := http.NewServeMux()\n\n    router.Handle(\"/web/static/\", \n        http.StripPrefix(\"/web/static/\", \n        http.FileServer(http.Dir(\"web/static\"))))\n\n    router.HandleFunc(\"/\", handler.HomePage)\n\n    log.Fatal(http.ListenAndServe(\":3000\", middleware.Logging(router)))\n}\n                </code></pre></div></section>"
+}

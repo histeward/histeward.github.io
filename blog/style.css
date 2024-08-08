@@ -1,11 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 :root {
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    /*letter-spacing: 0.1rem;*/
-    scroll-behavior: smooth;
     /*font-size: clamp(1rem, 1.5vw, 1.5rem);*/
-    /*background-color: #ecf0f3;*/
-    background-color: #212121;
+    letter-spacing: 0.1em;
+    background-color: #ecf0f3;
+    /*background-color: #212121;*/
 }
 
 *, *:before, *:after {
@@ -17,11 +18,71 @@
     min-height: 0;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: Arial, sans-serif;
-    color: #ccc;
+    /*color: #ccc;*/
+    color: #212121;
+    display: grid;
+    grid-template-rows: 55px auto;
+    height: 100vh;
+}
+
+ul {
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+    padding: 5px 10px;
+    transition: color 100ms ease-in-out;
+}
+
+li:hover {
+    color: red;
+}
+
+a {
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    color: #212121;
+    transition: 100ms ease-in-out;
+}
+
+a:hover {
+    color: red ;
+    font-weight: 700;
+}
+
+h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 35px;
+    line-height: 1.5em;
+}
+
+h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 25px;
+    line-height: 1.5em;
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 1.5em;
 }
 
 section {
@@ -29,22 +90,34 @@ section {
     margin: 0 auto;
 }
 
-.container {
-    display: grid;
-    grid-template-columns:100% 0%;
-    transition: 400ms;
-    height: 100vh;
+.return-home {
+    text-transform: uppercase;
+    font-weight: 500;
 }
+
+/*##### table of contents of post #####*/
+
+.table-of-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.table-of-contents li {
+    list-style: inside;
+}
+
+/*##### blog post sidebar #####*/
 
 .blog-post-section {
     display: grid;
-    grid-template-rows: 50px auto;
+    grid-template-rows: 55px auto;
     border-right: solid 1px #ccc;
 }
 
 .blog-post-toolbar {
     width: 100%;
-    height: fit-content;
+    height: 100%;
     padding: 10px;
     border-bottom: 1px solid #ccc;
     display: flex;
@@ -52,23 +125,16 @@ section {
 }
 
 .blog-post-toolbar div {
+    height: 100%;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
     justify-content: end;
+    align-items: center;
     gap: 10px;
 }
 
-.blog-post-toolbar div button {
-    padding: 5px 15px;
-    aspect-ratio: 1 / 1;
-    border-radius: 5px;
-    background-color: #ccc;
-    border: transparent;
-}
-
-.blog-post-toolbar div button:hover {
-    background-color: white;
+.blog-post-links-wrapper {
+    display: none;
 }
 
 .blog-post-links {
@@ -77,46 +143,49 @@ section {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 10px;
+    padding: 0 10px;
     overflow: auto;
 }
 
-nav a {
-    height: 100px;
+.blog-post-links div {
+    min-height: 90px;
+    min-width: 400px;
+    max-width: 550px;
+    max-height: 100px;
     width: 100%;
-    max-width: 500px;
+    height: 100%;
+    border-bottom: solid #ccc 1px;
     margin: auto;
-    font-size: 12px;
-    color: #ccc;
-    text-decoration: none;
-    padding: 10px;
     display: flex;
     flex-direction: row;
     justify-content: start;
-    align-items: center;
     transition: background-color 100ms ease-in-out;
 }
 
-nav a h2 {
-    padding-left: 10px;
+.blog-post-links div:hover {
+    /*background-color: rgba(255, 255, 255, 0.1);*/
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
-nav a img {
+
+.blog-post-links div a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.blog-post-links div a p {
+    padding-left: 10px;
+    font-weight: 500;
+}
+
+.blog-post-links div a img {
     width: auto;
     height: 100%;
 }
 
-
-nav a:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-hr {
-    max-width: 500px;
-    width: 100%;
-    color: #ccc;
-    margin: auto;
-}
+/*##### Copy code button #####*/
 
 .code-box {
     width: 100%;
@@ -154,9 +223,74 @@ code {
     cursor: pointer;
 }
 
+/*##### dynamic User Interface #####*/
+
 #content {
-    display: none;
     overflow: auto;
     padding: 20px;
 }
 
+.content {
+    display: none;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    transition: grid-template-columns 200ms ease-in-out;
+    border-top: 1px solid #ccc;
+}
+
+.container.sectioned {
+    grid-template-columns: 30% 70%;
+}
+
+.container.minimised {
+    grid-template-columns: 100px auto;
+}
+
+.container.maximised {
+    grid-template-columns: 100% 0%
+}
+
+.sectioned-btn, .sectioned-reveal-btn, .maximise-btn, .minimise-btn {
+    display: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #ccc;
+    border: transparent;
+}
+
+.visible {
+    display: block;
+    opacity: 1;
+}
+
+/*##### 404 post not found #####*/
+
+#sad-face {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#sad-face div {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+#sad-face div h1 {
+    font-size: clamp(24px, 4vw, 45px);
+    white-space: nowrap;
+}
+
+#sad-face img {
+    width: 30%;
+    transform: translate(45%, 35%);
+}

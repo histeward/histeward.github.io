@@ -1,74 +1,108 @@
-const containerDiv = document.querySelector(".container");
 const contentDiv = document.getElementById('content');
+const containerDiv = document.querySelector(".container");
 const blogPostSectionDiv = document.querySelector(".blog-post-section");
-const blogPostLinks = document.querySelector(".blog-post-links");
+const blogPostLinks = document.querySelector(".blog-post-links-wrapper");
+const sectionedBtn = document.querySelector(".sectioned-btn");
+const sectionedRevealBtn = document.querySelector(".sectioned-reveal-btn");
+const minimiseBtn = document.querySelector(".minimise-btn");
+const maximiseBtn = document.querySelector(".maximise-btn");
 
-function resizeBlogNav(x) {
-    const smallBtn = document.querySelector(".small-btn");
-    const closeBtn = document.querySelector(".close-btn");
-    const expandBtn = document.querySelector(".expand-btn");
+function resizeSideBar(x) {
     if (x === 1) {
-        // three tenth viewport
-        containerDiv.style.gridTemplateColumns = "30% 70%";
+        // sectioned shrink
+        containerDiv.classList.add("sectioned")
+        containerDiv.classList.remove("maximised")
+        containerDiv.classList.remove("minimised")
 
-        contentDiv.style.display = "block";
+        sectionedBtn.classList.remove("visible")
+        sectionedRevealBtn.classList.remove("visible")
+        minimiseBtn.classList.add("visible")
+        maximiseBtn.classList.add("visible")
 
-        blogPostLinks.style.display = "block"
-
-        smallBtn.style.display = "none"
-
-        closeBtn.style.display = "block";
-
-        expandBtn.style.display = "block";
+        blogPostLinks.classList.add("visible")
     } else if (x === 2) {
-        // one tenth viewport
-        containerDiv.style.gridTemplateColumns = "50px auto";
+        // sectioned reveal
+        containerDiv.classList.add("sectioned")
+        containerDiv.classList.remove("maximised")
+        containerDiv.classList.remove("minimised")
 
-        contentDiv.style.display = "block";
+        sectionedBtn.classList.remove("visible")
+        sectionedRevealBtn.classList.remove("visible")
+        minimiseBtn.classList.add("visible")
+        maximiseBtn.classList.add("visible")
 
-        contentDiv.style.margin = "auto";
+        blogPostLinks.classList.add("visible")
+    } else if (x === 3) {
+        // close
+        containerDiv.classList.remove("sectioned")
+        containerDiv.classList.remove("maximised")
+        containerDiv.classList.add("minimised")
 
-        blogPostLinks.style.display = "none";
+        sectionedBtn.classList.remove("visible")
+        sectionedRevealBtn.classList.add("visible")
+        minimiseBtn.classList.remove("visible")
+        maximiseBtn.classList.add("visible")
 
-        smallBtn.style.display = "block"
-
-        closeBtn.style.display = "none";
-
-        expandBtn.style.display = "block";
-
+        blogPostLinks.classList.remove("visible")
     } else {
-        // full viewport
-        containerDiv.style.gridTemplateColumns = "100% 0";
+        // maximise
+        containerDiv.classList.remove("sectioned")
+        containerDiv.classList.add("maximised")
+        containerDiv.classList.remove("minimised")
 
-        contentDiv.style.display = "none";
+        sectionedBtn.classList.add("visible")
+        sectionedRevealBtn.classList.remove("visible")
+        minimiseBtn.classList.add("visible")
+        maximiseBtn.classList.remove("visible")
 
-        contentDiv.style.display = "block";
-
-        blogPostLinks.style.display = "block"
-
-        smallBtn.style.display = "block"
-
-        closeBtn.style.display = "block";
-
-        expandBtn.style.display = "none";
+        blogPostLinks.classList.add("visible")
     }
 };
 
 // Function to fetch and display a blog post
-const displayPost = async (postId) => {
-    try {
-        const response = await fetch(`/blog/posts/${postId}.html`);
-        if (!response.ok) throw new Error('Post not found');
-        const htmlContent = await response.text();
-        contentDiv.innerHTML = htmlContent;
-        contentDiv.style.display = "block";
-        containerDiv.style.gridTemplateColumns = "50px auto";
-        blogPostLinks.style.display = "none"
-        hljs.highlightAll(); // initialise code syntax highlighting after innerhtml replacement
-    } catch (error) {
-        contentDiv.innerHTML = 'Post not found';
-    }
+//const displayPost = async (postId) => {
+//    try {
+//        const response = await fetch(`/blog/posts/${postId}.html`);
+//        if (!response.ok) throw new Error('Post not found1'); // throw error if response not ok
+//        if (contentDiv.classList.contains("hidden")) contentDiv.classList.add("visible");
+//        const htmlContent = await response.text();
+//        contentDiv.innerHTML = htmlContent;
+//
+//        containerDiv.classList.add("sectioned")
+//        containerDiv.classList.remove("maximised")
+//        containerDiv.classList.remove("minimised")
+//
+//        sectionedBtn.classList.remove("visible");
+//        sectionedRevealBtn.classList.remove("visible");
+//        minimiseBtn.classList.add("visible");
+//        maximiseBtn.classList.add("visible");
+//        hljs.highlightAll(); // initialise code syntax highlighting after innerhtml replacement
+//    } catch (error) {
+//        const response = await fetch(`/blog/posts/404.html`);
+//        contentDiv.innerHTML = 'Post not found2';
+//        if (contentDiv.classList.contains("hidden")) contentDiv.classList.add("visible");
+//        const htmlContent = await response.text();
+//        contentDiv.innerHTML = htmlContent;
+//    }
+//};
+// Function to fetch and display a blog post from a local file
+const displayPost = (postId) => {
+    const filePath = `./posts/${postId}.html`; // Local file path
+    fetch(filePath)
+        .then(response => {
+            if (!response.ok) throw new Error('Post not found'); // Throw error if response not ok
+            return response.text();
+        })
+        .then(htmlContent => {
+            contentDiv.innerHTML = htmlContent;
+            hljs.highlightAll(); // Initialize syntax highlighting
+        })
+        .catch(() => {
+            contentDiv.innerHTML = '<p>Post not found</p>'; // Error message for missing post
+        });
 };
+
+// Update the view based on the current URL or post parameter
 
 // navigate to a new url and update the view
 const navigateTo = (url) => {
@@ -80,18 +114,16 @@ const navigateTo = (url) => {
 const updateView = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const post = urlParams.get('post');
-    const path = window.location.pathname;
-
     if (post) {
         displayPost(post);
     } else {
-        contentDiv.innerHTML = routes[path] || '404 Page Not Found';
+        contentDiv.innerHTML = '<p>Select a post to read</p>';
     }
 };
 
 // event listener to handle link clicks and override default browser behavior
 document.addEventListener('click', (event) => {
-    if (event.target.matches('[blog-link]')) {
+    if (event.target.matches('[link]')) {
         event.preventDefault();
         navigateTo(event.target.href);
     }
@@ -112,6 +144,7 @@ function copyCode(button) {
             .then(() => {
                 button.innerHTML = 'copied';
                 button.style.backgroundColor = 'lightgreen';
+                button.style.color = '#212121';
 
                 setTimeout(() => {
                     button.innerHTML = 'copy';

@@ -1,0 +1,155 @@
+<section>
+    <h1>Routing in go 1.22 just got better</h1>
+    <br>
+    <p>Date posted: 24-07-2024</p>
+    <br>
+    <h2>Table of contents:</h2>
+    <ul class="table-of-contents">
+        <li><a href="#mbr">method based routing</a></li>
+        <li><a href="#wr">wildcards / path parameters</a></li>
+    </ul>
+    <br>
+    <h2>Abstract</h2>
+    <p>
+    Go v1.22 was released back in February 2024, It introduced some really great improvements on the <b>net/http</b>
+    standard library to the <b>net/http.ServeMux</b> type. Routing in go is more expressive and now supports nice to have
+    things like method based routing and wildcards.
+    </p>
+    <br>
+    <p>
+    As for previous versions of Go, you could use other libraries like chi or gorilla mux that had the functionality built-in.
+    Of course you could implement this yourself, but it's nice to have a good set of tools at your disposal.
+    </p>
+    <br>
+    <br>
+    <h2 id="mbr">Method based routing</h2>
+    <p>
+    As of now, the standard library is all you really need to start writing api's in go.
+    Before go v1.22 to handle different http methods you could write a check inside of the handler function. Which can be a
+    bit mundane to write each time.
+    </p>
+    <br>
+    <div class="code-box">
+        <button class="copy-button" onclick="copyCode(this)">copy</button>
+        <pre><code class="language-go">// handler example before go v1.22
+func FilterById(w http.ResponseWriter, r *http.Request) {
+	if r.Method == http.MethodGet {
+		// Handle get requests
+	} else if r.Method == http.MethodDelete {
+		// Handle delete requests
+}</code></pre>
+    </div>
+    <br>
+    <p>
+    Now you can specify HTTP methods directly in the pattern of a route. 
+    This ensures requests like <b>DELETE /posts/{id}</b> fail if not
+    handled properly, responding with a 405 method not allowed.
+    </p>
+    <br>
+    <p>
+    Let's make a simple http server using go v1.22 to demonstration. We import the <b>fmt</b> and <b>net/http</b> library, define our handler
+    that returns a confirmation when the method aligns with what's specified in the route pattern, define a route that
+    handles DELETE requests to the "/resource" endpoint, initialise our server and run our it. Make sure that you have go
+    version 1.22 specified in your go.mod file for it to work.
+    </p>
+    <br>
+    <div class="code-box">
+        <button class="copy-button" onclick="copyCode(this)">copy</button>
+        <pre><code class="language-go">// after go v1.22
+package main
+
+import (
+	"fmt"
+	"net/http"
+)
+
+func handleResource(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Method %s Accepted", r.Method)
+}
+
+func main() {
+    router := http.NewServeMux()
+    router.HandleFunc("DELETE /resource", handleResource)
+
+    server := http.Server {
+        Addr: ":8080",
+        Handler: router,
+    }
+
+	fmt.Println("Server is running on port 8080")
+	server.ListenAndServe()
+}</code></pre>
+    </div>
+    <br>
+    <p>
+    Now we can send a curl request with the GET method and it should return "Method Not Allowed". 
+    If you send a request with the correct method, it should return "Method DELETE Accepted".
+    </p>
+    <br>
+    <div class="code-box">
+        <pre><code class="language-bash"># curl request with incorrect method
+$ curl -X GET http://localhost:8080/resource
+
+Method Not Allowed
+
+# curl request with correct method
+$ curl -X DELETE http://localhost:8080/resource
+
+Method DELETE Accepted
+</code></pre>
+    </div>
+    <br>
+    <br>
+    <h2 id="wr">Wildcards</h2>
+    <p>
+    If it comes to wildcards go allows us to now specify what we want to capture within curly brackets.
+    Here we implement a wildcard segment {id} e.g "POST /resource/{id}".
+    We use the r.PathValue("id") function inside the handler to capture the value of the {id} wildcard from the request path.
+    Based on the HTTP method, the handler returns the appropriate success status code and message.
+    </p>
+    <br>
+    <div class="code-box">
+        <button class="copy-button" onclick="copyCode(this)">copy</button>
+        <pre><code class="language-go">// after go v1.22
+package main
+
+import (
+	"fmt"
+	"net/http"
+)
+
+func handleResource(w http.ResponseWriter, r *http.Request) {
+	id := r.PathValue("id")
+
+	switch r.Method {
+	case "POST":
+		w.WriteHeader(http.StatusCreated)
+		fmt.Fprintf(w, "Resource %s created", id)
+	case "PUT":
+		w.WriteHeader(http.StatusOK)
+		fmt.Fprintf(w, "Resource %s updated", id)
+	default:
+		http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
+	}
+}
+
+func main() {
+
+    router := http.NewServeMux()
+
+	router.HandleFunc("POST /resource/{id}", handleResource)
+	router.HandleFunc("DELETE /resource/{id}", handleResource)
+	router.HandleFunc("PUT /resource/{id}", handleResource)
+
+    server := http.Server {
+        Addr: ":8080",
+        Handler: router,
+    }
+
+	fmt.Println("Server is running on port 8080")
+	server.ListenAndServe()
+}</code></pre>
+    </div>
+
+</section>
+
